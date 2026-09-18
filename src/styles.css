@@ -86,10 +86,6 @@ footer { align-items: center; background: var(--panel); border-top: 1px solid va
 /* Interactive product layer */
 .scroll-progress { background: rgba(241,242,243,.12); bottom: 0; position: fixed; right: 18px; top: 0; width: 1px; z-index: 14; }
 .scroll-progress span { background: var(--blue); display: block; height: 100%; transform-origin: top; width: 2px; }
-.availability { align-items: center; background: rgba(5,5,5,.74); border: 1px solid var(--line); bottom: 26px; display: flex; font: 9px 'DM Mono', monospace; gap: 9px; letter-spacing: .1em; padding: 11px 14px; position: fixed; right: 4vw; text-transform: uppercase; transition: border-color .3s, color .3s; z-index: 11; }
-.availability:hover { border-color: var(--blue); color: var(--blue); }
-.availability i { background: #76c693; border-radius: 50%; box-shadow: 0 0 0 4px rgba(118,198,147,.12); height: 6px; width: 6px; }
-.availability span { color: var(--blue); font-size: 15px; margin-left: 4px; }
 .whatsapp-float { align-items: center; background: #25d366; border: 1px solid #25d366; border-radius: 999px; bottom: 132px; box-shadow: 0 10px 30px rgba(0,0,0,.3); color: #041b0c; display: flex; font: 9px 'DM Mono', monospace; gap: 8px; letter-spacing: .1em; padding: 11px 14px 11px 11px; position: fixed; right: 4vw; text-transform: uppercase; transition: background .3s, box-shadow .3s, transform .3s; z-index: 11; }
 .whatsapp-float svg { fill: currentColor; height: 20px; width: 20px; }
 .whatsapp-float:hover { background: #8af0ad; box-shadow: 0 14px 35px rgba(37,211,102,.25); transform: translateY(-4px); }
@@ -114,5 +110,5 @@ footer { align-items: center; background: var(--panel); border-top: 1px solid va
 .command-palette > a:hover { color: var(--blue); padding-left: 12px; }
 .command-palette > a span { color: var(--blue); }
 @keyframes signatureReveal { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
-@media (max-width: 800px) { .availability { bottom: 14px; font-size: 8px; right: 7vw; }.whatsapp-float { bottom: 106px; font-size: 8px; right: 7vw; }.back-to-top { bottom: 62px; font-size: 8px; padding: 9px 11px; right: 7vw; }.scroll-progress { right: 8px; }.project-preview { display: none; }.capability-detail { margin-top: 35px; }.signature { bottom: -9px; font-size: 28px; right: 0; } footer small { line-height: 1.6; } }
+@media (max-width: 800px) { .whatsapp-float { bottom: 84px; font-size: 8px; right: 7vw; }.back-to-top { bottom: 62px; font-size: 8px; padding: 9px 11px; right: 7vw; }.scroll-progress { right: 8px; }.project-preview { display: none; }.capability-detail { margin-top: 35px; }.signature { bottom: -9px; font-size: 28px; right: 0; } footer small { line-height: 1.6; } }
 @media (prefers-reduced-motion: reduce) { .stack-logo, .signature { animation: none; opacity: 1; transform: none; } }

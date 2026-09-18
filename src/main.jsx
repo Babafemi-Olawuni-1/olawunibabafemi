@@ -59,10 +59,6 @@ function CommandPalette({ onClose }) {
   return <div className="command-backdrop" role="presentation" onClick={onClose}><div className="command-palette" role="dialog" aria-modal="true" aria-label="Quick navigation" onClick={(event) => event.stopPropagation()}><div className="command-top"><span>COMMAND / FEMTECH</span><button onClick={onClose} aria-label="Close command palette">ESC</button></div><p>Navigate the experience</p>{commands.map(([label, href]) => <a href={href} key={label} onClick={onClose}>{label}<span>↗</span></a>)}</div></div>
 }
 
-function AvailabilityBadge() {
-  return <a className="availability" href="https://wa.me/2349013656460"><i /> AVAILABLE FOR SELECT PROJECTS <span>↗</span></a>
-}
-
 function WhatsAppFloat() {
   return <a className="whatsapp-float" href="https://wa.me/2349013656460" aria-label="Chat with Babafemi on WhatsApp" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.52 0 .18 5.34.18 11.9c0 2.1.55 4.15 1.6 5.96L.08 24l6.28-1.65a11.9 11.9 0 0 0 5.72 1.46h.01c6.55 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.47-8.43Zm-8.44 18.3h-.01a9.88 9.88 0 0 1-5.03-1.38l-.36-.21-3.73.98 1-3.64-.23-.37a9.87 9.87 0 0 1-1.51-5.26c0-5.44 4.43-9.87 9.88-9.87 2.63 0 5.1 1.03 6.96 2.89a9.83 9.83 0 0 1 2.89 6.97c0 5.45-4.43 9.88-9.86 9.88Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47a8.86 8.86 0 0 1-1.64-2.04c-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.5 1.7.64.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.56-.35Z" /></svg><span>CHAT</span></a>
 }
@@ -225,7 +221,7 @@ function App() {
   useEffect(() => { const openPalette = (event) => { if ((event.key === '/' || (event.key.toLowerCase() === 'k' && (event.metaKey || event.ctrlKey))) && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) { event.preventDefault(); setPaletteOpen(true) } if (event.key === 'Escape') setPaletteOpen(false) }; window.addEventListener('keydown', openPalette); return () => window.removeEventListener('keydown', openPalette) }, [])
   useEffect(() => { const sections = gsap.utils.toArray('main > section:not(.hero-sequence)'); sections.forEach((section) => gsap.fromTo(section, { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: .9, ease: 'power3.out', scrollTrigger: { trigger: section, start: 'top 88%', once: true } })) }, [])
   useEffect(() => { const lenis = new Lenis({ duration: 1.1, smoothWheel: true }); const raf = (time) => { lenis.raf(time); ScrollTrigger.update(); requestAnimationFrame(raf) }; const frame = requestAnimationFrame(raf); return () => { cancelAnimationFrame(frame); lenis.destroy() } }, [])
-  return <><CodeRain /><ScrollProgress /><AvailabilityBadge /><WhatsAppFloat /><BackToTop /><Navigation /><main><Hero /><About /><Capabilities /><Projects /><Experience /><Stack /><Statement /><Contact /></main><footer><div><Logo /></div><a className="footer-portfolio" href="https://olawunibabafemi.netlify.app/" target="_blank" rel="noreferrer">VIEW LIVE PORTFOLIO ↗</a><span>© 2026 Babafemi David Olawuni</span></footer>{paletteOpen && <CommandPalette onClose={() => setPaletteOpen(false)} />}</>
+  return <><CodeRain /><ScrollProgress /><WhatsAppFloat /><BackToTop /><Navigation /><main><Hero /><About /><Capabilities /><Projects /><Experience /><Stack /><Statement /><Contact /></main><footer><div><Logo /></div><a className="footer-portfolio" href="https://olawunibabafemi.netlify.app/" target="_blank" rel="noreferrer">VIEW LIVE PORTFOLIO ↗</a><span>© 2026 Babafemi David Olawuni</span></footer>{paletteOpen && <CommandPalette onClose={() => setPaletteOpen(false)} />}</>
 }
 
 createRoot(document.getElementById('root')).render(<App />)
